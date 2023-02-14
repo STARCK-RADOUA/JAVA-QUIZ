@@ -2,12 +2,14 @@ package com.example.myapplication;
 
 import static android.app.PendingIntent.getActivity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.provider.CalendarContract;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +35,10 @@ public class MainActivity2 extends AppCompatActivity implements QuesContrat.view
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+
         setContentView(R.layout.activity_main2);
         bt1=findViewById(R.id.bt1);
         bt2=findViewById(R.id.bt2);
@@ -65,6 +71,7 @@ public class MainActivity2 extends AppCompatActivity implements QuesContrat.view
         bt1.setOnClickListener(this);
         bt2.setOnClickListener(this);
         bt3.setOnClickListener(this);
+
 
 
 
@@ -184,5 +191,19 @@ public class MainActivity2 extends AppCompatActivity implements QuesContrat.view
 
 
 
+    }
+
+
+    @Override
+    public void onSaveInstanceState( Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("score",press.getScore());
+    }
+
+    @Override
+    protected void onRestoreInstanceState( Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        int sc=savedInstanceState.getInt("score");
+        scoreAddView(sc);
     }
 }

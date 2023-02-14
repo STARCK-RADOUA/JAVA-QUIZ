@@ -33,7 +33,13 @@ public class QuesPresenter implements QuesContrat.Presenter.Presenter1 {
 
 
     }
+
+    public int getScore() {
+        return score;
+    }
+
     private int score=0;
+
 
     @Override
     public void sTart2() {

@@ -28,6 +28,7 @@ interface Presenter{
        String corectAnswer();
        String count();
        void scoreAdd();
+       int getScore();
 
        void onDestory();
 

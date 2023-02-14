@@ -37,8 +37,9 @@ public class MainActivity extends AppCompatActivity implements QuesContrat.view{
 
 
                 Intent intent=new Intent(MainActivity.this,MainActivity2.class);
-                intent.putExtra("name",val);
-
+                Bundle b =new Bundle();
+                b.putString("name",val);
+                intent.putExtra("score",b);
                 startActivity(intent);
 
 
